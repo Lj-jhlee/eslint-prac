@@ -1,1 +1,2 @@
-const foo = bar;
+// const foo = bar;
+// const aaaa = "123123";
