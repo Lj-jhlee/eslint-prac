@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-../version_script.sh
+source ./version_script.sh $HUSKY_GIT_PARAMS
