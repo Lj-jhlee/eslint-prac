@@ -2,10 +2,16 @@
 
 COMMIT_MSG=$(git log --oneline -n 1 HEAD)
 
-if [[ $COMMIT_MSG =~ "vuM" ]]
+if [[ $COMMIT_MSG == *"-vuM"* ]]
 then
-  echo 'aaaaaaaaaaaaaaaaaa'
-if
+  echo 'MAJOR_UPDATE' && npm version major
+elif [[ $COMMIT_MSG == *"-vum"* ]]
+then
+  echo 'MINOR_UPDATE' && npm version minor
+elif [[ $COMMIT_MSG == *"-vup"* ]]
+then
+  echo 'PATCH_UPDATE' && npm version patch
+fi
 
 # MAJOR_UPDATE=$(git log --oneline -n 1 HEAD | grep "vuM")
 # MINOR_UPDATE=$(git log --oneline -n 1 HEAD | grep "vum")
